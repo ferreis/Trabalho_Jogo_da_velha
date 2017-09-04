@@ -9,9 +9,25 @@ using namespace std;
 
 int main()
 {
-	const int TAMANHO = 3;
-	int jogo[TAMANHO][TAMANHO];
+	char jogodavelha[TAMANHO][TAMANHO];
+	int selecao;
+	cout << "1-Player vs Player << endl";
+	cout << "2-Player vs CPU << endl";
+	cin >> selecao;
+		switch (selecao)
+		{
+		case 1:
+			cout << jogodavelha;
+			InterfacedoJogo(jogodavelha);
+			break;
+		case 2:
 
-    return 0;
+			break;
+		default: 
+		cout << "Numero digitado invalido";
+			break;
+		}
+		system("pause");
+	return 0;
 }
 
