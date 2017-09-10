@@ -16,10 +16,11 @@ int main()
 	int  turno = 0;
 	bool vencedor = false;
 	bool fim = false;
+	do{
 	cout << "1-Player vs Player" << endl;
 	cout << "2-Player vs CPU" << endl;
+	cout << "3-Sair" << endl;
 	cin >> selecao;
-	do{
 		switch (selecao)
 		{
 		case 1:
@@ -65,8 +66,6 @@ int main()
 			cout << "Numero digitado invalido";
 			break;
 		}
-	
-		system("pause");
-	} while (fim = false);
+	} while (fim == false);
 	return 0;
 }
