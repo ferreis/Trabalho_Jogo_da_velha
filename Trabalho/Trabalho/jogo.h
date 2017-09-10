@@ -7,6 +7,9 @@ int numeroAleatorio(int menor, int maior) {
 	return rand() % (maior - menor + 1) + menor;
 }
 
+int AlterarNumAleatorio(int NumAleatorio) {
+	(NumAleatorio/3 + 1)*10 + (NumAleatorio%3 + 1)
+}
 void InterfacedoJogo(char jogodavelha[TAMANHO][TAMANHO]) 
 {	
 	jogodavelha[1][0] = '1';

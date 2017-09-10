@@ -17,7 +17,8 @@ int main()
 	bool vencedor = false;
 	bool fim = false;
 	do{
-		cout << numeroAleatorio(1, 9) << endl;
+		cout << int num == numeroAleatorio(0, 9) << endl;
+		cout << AlterarNumAleatorio(num) << endl;
 	cout << "1-Player vs Player" << endl;
 	cout << "2-Player vs CPU" << endl;
 	cout << "3-Sair" << endl;
@@ -76,7 +77,8 @@ int main()
 				if (vencedornumb == 1) { vencedor = true; }
 
 				if (vencedor == false) {
-					jogadorO == numeroAleatorio(1, 9);
+					int jogada == numeroAleatorio(0, 9);
+					jogadorO == AlterarNumAleatorio(jogada);						
 					jogoO(verificadorjogodavelha, jogodavelha, jogadorO);
 					turno++;
 				}
