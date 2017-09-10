@@ -17,7 +17,7 @@ int main()
 	bool vencedor = false;
 	bool fim = false;
 	do{
-		cout << numeroAleatorio(0, 9) << endl;
+		cout << numeroAleatorio(1, 9) << endl;
 	cout << "1-Player vs Player" << endl;
 	cout << "2-Player vs CPU" << endl;
 	cout << "3-Sair" << endl;
@@ -58,7 +58,36 @@ int main()
 			} while (vencedor == false);
 			break;
 		case 2:
-			
+			do {
+				system("cls");
+				InterfacedoJogo(jogodavelha);
+
+				if (vencedor == false) {
+					cout << "vez do Jogador X" << endl;
+					cin >> jogadorX;
+					jogoX(verificadorjogodavelha, jogodavelha, jogadorX);
+					turno++;
+				}
+
+				system("cls");
+				vencedornumb = verificado(verificadorjogodavelha, turno);
+				InterfacedoJogo(jogodavelha);
+
+				if (vencedornumb == 1) { vencedor = true; }
+
+				if (vencedor == false) {
+					jogadorO == numeroAleatorio(1, 9);
+					jogoO(verificadorjogodavelha, jogodavelha, jogadorO);
+					turno++;
+				}
+
+				system("cls");
+				vencedornumb = verificado(verificadorjogodavelha, turno);
+				InterfacedoJogo(jogodavelha);
+
+				if (vencedornumb == 1) { vencedor = true; }
+
+			} while (vencedor == false);
 			break;
 		case 3:
 			fim = true;
