@@ -3,6 +3,10 @@
 #define jogo_h
 #define TAMANHO 4
 
+int numeroAleatorio(int menor, int maior) {
+	return rand() % (maior - menor + 1) + menor;
+}
+
 void InterfacedoJogo(char jogodavelha[TAMANHO][TAMANHO]) 
 {	
 	jogodavelha[1][0] = '1';
