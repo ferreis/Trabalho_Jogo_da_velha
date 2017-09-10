@@ -20,9 +20,8 @@ void InterfacedoJogo(char jogodavelha[TAMANHO][TAMANHO])
 	}
 }
 void jogoX(int verificadorjogodavelha[TAMANHO][TAMANHO], char jogodavelha[TAMANHO][TAMANHO], int jogadorX) {
-	int linha, coluna;
 	switch (jogadorX)
-	{
+		{
 		case 11:
 			if (verificadorjogodavelha[1][1] != 2) {
 				jogodavelha[1][1] = 'X';
@@ -36,7 +35,7 @@ void jogoX(int verificadorjogodavelha[TAMANHO][TAMANHO], char jogodavelha[TAMANH
 			}
 			break;
 		case 13:
-			if (verificadorjogodavelha[1][3]  != 2) {
+			if (verificadorjogodavelha[1][3] != 2) {
 				jogodavelha[1][3] = 'X';
 				verificadorjogodavelha[1][3] = 1;
 			}
@@ -83,161 +82,166 @@ void jogoX(int verificadorjogodavelha[TAMANHO][TAMANHO], char jogodavelha[TAMANH
 	}
 }
 void jogoO(int verificadorjogodavelha[TAMANHO][TAMANHO], char jogodavelha[TAMANHO][TAMANHO], int jogadorO) {
-	switch (jogadorO)
-	{
-	case 11:
-		if (verificadorjogodavelha[1][1] != 1) {
-			jogodavelha[1][1] = 'O';
-			verificadorjogodavelha[1][1] = 2;
-		}
-		break;
-	case 12:
-		if (verificadorjogodavelha[1][2] != 1) {
-			jogodavelha[1][2] = 'O';
-			verificadorjogodavelha[1][2] = 2;
-		}
-		break;
-	case 13:
-		if (verificadorjogodavelha[1][3] != 1) {
-			jogodavelha[1][3] = 'O';
-			verificadorjogodavelha[1][3] = 2;
-		}
-		break;
-	case 21:
-		if (verificadorjogodavelha[2][1] != 1) {
-			jogodavelha[2][1] = 'O';
-			verificadorjogodavelha[2][1] = 2;		}
-		break;
-	case 22:
-		if (verificadorjogodavelha[2][2] != 1) {
-			jogodavelha[2][2] = 'O';
-			verificadorjogodavelha[2][2] = 2;
-		}
-		break;
-	case 23:
-		if (verificadorjogodavelha[2][3] != 1) {
-			jogodavelha[2][3] = 'O';
-			verificadorjogodavelha[2][3] = 2;
-		}
-		break;
-	case 31:
-		if (verificadorjogodavelha[3][1] != 1) {
-			jogodavelha[3][1] = 'O';
-			verificadorjogodavelha[3][1] = 2;
-		}
-		break;
-	case 32:
-		if (verificadorjogodavelha[3][2] != 1) {
-			jogodavelha[3][2] = 'O';
-			verificadorjogodavelha[3][2] = 2;
-		}
-		break;
-	case 33:
-		if (verificadorjogodavelha[3][3] != 1) {
-			jogodavelha[3][3] = 'O';
-			verificadorjogodavelha[3][3] = 2;
-		}
-		break;
-	default:
-		std::cout << "cordernadas digitado invalido";
-		break;
+
+		switch (jogadorO)
+		{
+		case 11:
+			if (verificadorjogodavelha[1][1] != 1) {
+				jogodavelha[1][1] = 'O';
+				verificadorjogodavelha[1][1] = 2;
+			}
+			break;
+		case 12:
+			if (verificadorjogodavelha[1][2] != 1) {
+				jogodavelha[1][2] = 'O';
+				verificadorjogodavelha[1][2] = 2;
+			}
+			break;
+		case 13:
+			if (verificadorjogodavelha[1][3] != 1) {
+				jogodavelha[1][3] = 'O';
+				verificadorjogodavelha[1][3] = 2;
+			}
+			break;
+		case 21:
+			if (verificadorjogodavelha[2][1] != 1) {
+				jogodavelha[2][1] = 'O';
+				verificadorjogodavelha[2][1] = 2;
+			}
+			break;
+		case 22:
+			if (verificadorjogodavelha[2][2] != 1) {
+				jogodavelha[2][2] = 'O';
+				verificadorjogodavelha[2][2] = 2;
+			}
+			break;
+		case 23:
+			if (verificadorjogodavelha[2][3] != 1) {
+				jogodavelha[2][3] = 'O';
+				verificadorjogodavelha[2][3] = 2;
+			}
+			break;
+		case 31:
+			if (verificadorjogodavelha[3][1] != 1) {
+				jogodavelha[3][1] = 'O';
+				verificadorjogodavelha[3][1] = 2;
+			}
+			break;
+		case 32:
+			if (verificadorjogodavelha[3][2] != 1) {
+				jogodavelha[3][2] = 'O';
+				verificadorjogodavelha[3][2] = 2;
+			}
+			break;
+		case 33:
+			if (verificadorjogodavelha[3][3] != 1) {
+				jogodavelha[3][3] = 'O';
+				verificadorjogodavelha[3][3] = 2;
+			}
+			break;
+		default:
+			std::cout << "cordernadas digitado invalido";
+			break;
+		
 	}
 }
-bool verificado(int verificadorjogodavelha[TAMANHO][TAMANHO], int vencedor, int turno, int selecao)
+int verificado(int verificadorjogodavelha[TAMANHO][TAMANHO], int turno)
 {
 	// vencador horizontal X
 	if (verificadorjogodavelha[1][1] == 1 && verificadorjogodavelha[1][2] == 1 && verificadorjogodavelha[1][3] == 1) {
 		std::cout << "Vencedor e jogardor X" << std::endl;
 		system("pause");
-		return vencedor = true;
+		return 1;
 	}
 	else if (verificadorjogodavelha[2][1] == 1 && verificadorjogodavelha[2][2] == 1 && verificadorjogodavelha[2][3] == 1) {
 		std::cout << "Vencedor e jogardor X" << std::endl;
 		system("pause");
-		return vencedor = true;
+		return 1;
 	}
 	else if (verificadorjogodavelha[3][1] == 1 && verificadorjogodavelha[3][2] == 1 && verificadorjogodavelha[3][3] == 1) {
 		std::cout << "Vencedor e jogardor X" << std::endl;
 		system("pause");
-		return vencedor = true;
+		return 1;
 	}
 	// vencedor Vertical X
 	else if (verificadorjogodavelha[1][1] == 1 && verificadorjogodavelha[2][1] == 1 && verificadorjogodavelha[3][1] == 1) {
 		std::cout << "Vencedor e jogardor X" << std::endl;
 		system("pause");
-		return vencedor = true;
+		return 1;
 	}
 	else if (verificadorjogodavelha[1][2] == 1 && verificadorjogodavelha[2][2] == 1 && verificadorjogodavelha[3][2] == 1) {
 		std::cout << "Vencedor e jogardor X" << std::endl;
 		system("pause");
-		return vencedor = true;
+		return 1;
 	}
 	else if (verificadorjogodavelha[1][3] == 1 && verificadorjogodavelha[2][3] == 1 && verificadorjogodavelha[3][3] == 1) {
 		std::cout << "Vencedor e jogardor X" << std::endl;
 		system("pause");
-		return vencedor = true;
+		return 1;
 	}
 	// vencedor Diagonal X
 	else if (verificadorjogodavelha[1][1] == 1 && verificadorjogodavelha[2][2] == 1 && verificadorjogodavelha[3][3] == 1) {
 		std::cout << "Vencedor e jogardor X" << std::endl;
 		system("pause");
-		return vencedor = true;
+		return 1;
 	}
 	else if (verificadorjogodavelha[1][3] == 1 && verificadorjogodavelha[2][2] == 1 && verificadorjogodavelha[3][1] == 1) {
 		std::cout << "Vencedor e jogardor X" << std::endl;
 		system("pause");
-		return vencedor = true;
+		return 1;
 	}
 
 	// vencador horizontal O
 	else if (verificadorjogodavelha[1][1] == 2 && verificadorjogodavelha[1][2] == 2 && verificadorjogodavelha[1][3] == 2) {
 		std::cout << "Vencedor e jogardor O" << std::endl;
 		system("pause");
-		return vencedor = true;
+		return 1;
 	}
 	else if (verificadorjogodavelha[2][1] == 2 && verificadorjogodavelha[2][2] == 2 && verificadorjogodavelha[2][3] == 2) {
 		std::cout << "Vencedor e jogardor O" << std::endl;
 		system("pause");
-		return vencedor = true;
+		return 1;
 	}
 	else if (verificadorjogodavelha[3][1] == 2 && verificadorjogodavelha[3][2] == 2 && verificadorjogodavelha[3][3] == 2) {
 		std::cout << "Vencedor e jogardor O" << std::endl;
 		system("pause");
-		return vencedor = true;
+		return 1;
 	}
 	// vencedor Vertical O
 	else if (verificadorjogodavelha[1][1] == 2 && verificadorjogodavelha[2][1] == 2 && verificadorjogodavelha[3][1] == 2) {
 		std::cout << "Vencedor e jogardor O" << std::endl;
 		system("pause");
-		return vencedor = true;
+		return 1;
 	}
 	else if (verificadorjogodavelha[1][2] == 2 && verificadorjogodavelha[2][2] == 2 && verificadorjogodavelha[3][2] == 2) {
 		std::cout << "Vencedor e jogardor O" << std::endl;
 		system("pause");
-		return vencedor = true;
+		return 1;
 	}
 	else if (verificadorjogodavelha[1][3] == 2 && verificadorjogodavelha[2][3] == 2 && verificadorjogodavelha[3][3] == 2) {
 		std::cout << "Vencedor e jogardor O" << std::endl;
 		system("pause");
-		return vencedor = true;
+		return 1;
 	}
 	// vencedor Diagonal O
 	else if (verificadorjogodavelha[1][1] == 2 && verificadorjogodavelha[2][2] == 2 && verificadorjogodavelha[3][3] == 2) {
 		std::cout << "Vencedor e jogardor O" << std::endl;
 		system("pause");
-		return vencedor = true;
+		return 1;
 	}
 	else if (verificadorjogodavelha[1][3] == 2 && verificadorjogodavelha[2][2] == 2 && verificadorjogodavelha[3][1] == 2) {
 		std::cout << "Vencedor e jogardor O" << std::endl;
 		system("pause");
-		return vencedor = true;
+		return 1;
 	}
 	if (turno == 9) {
-		std::cout << "Empate" << std::endl;
+		std::cout << "Velha, empate " << std::endl;
 		system("pause");
-		return selecao = 0;
+		return 1;
 	}
-
+	return 0;
+	return 0;
 }
+
 #endif 
 

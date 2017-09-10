@@ -12,7 +12,8 @@ int main()
 {
 	char jogodavelha[TAMANHO][TAMANHO] = { 0 };
 	int verificadorjogodavelha[TAMANHO][TAMANHO] = {0};
-	int selecao, jogador, jogadorX, jogadorO, turno;
+	int selecao, jogadorX, jogadorO, vencedornumb;
+	int  turno = 0;
 	bool vencedor = false;
 	bool fim = false;
 	cout << "1-Player vs Player" << endl;
@@ -25,31 +26,47 @@ int main()
 			do {
 				system("cls");
 				InterfacedoJogo(jogodavelha);
-				cout << "vez do Jogador X" << endl;
-				cin >> jogadorX;
-				turno++;
-				jogoX(verificadorjogodavelha, jogodavelha, jogadorX);
-				system("cls");
+
+				if (vencedor == false) {
+					cout << "vez do Jogador X" << endl;
+					cin >> jogadorX;
+					jogoX(verificadorjogodavelha, jogodavelha, jogadorX);
+					turno++;
+				}
+
+				system("cls");	
+				vencedornumb = verificado(verificadorjogodavelha, turno);
 				InterfacedoJogo(jogodavelha);
-				verificado(verificadorjogodavelha, vencedor, turno, selecao);
-				cout << "vez do Jogador O" << endl;
-				cin >> jogadorO;
-				jogoO(verificadorjogodavelha, jogodavelha, jogadorO);
+				
+				if (vencedornumb == 1) { vencedor = true; }
+				if (vencedor == false) {
+					cout << "vez do Jogador O" << endl;
+					cin >> jogadorO;
+					jogoO(verificadorjogodavelha, jogodavelha, jogadorO);
+					turno++;
+				}
+
 				system("cls");
+				vencedornumb = verificado(verificadorjogodavelha, turno);
 				InterfacedoJogo(jogodavelha);
-				verificado(verificadorjogodavelha, vencedor, turno, selecao);
-			} while (vencedor == true);
+
+				if (vencedornumb == 1) { vencedor = true; }
+
+			
+			} while (vencedor == false);
 			break;
 		case 2:
-
+			
+			break;
+		case 3:
+			fim = true;
 			break;
 		default:
 			cout << "Numero digitado invalido";
 			break;
 		}
 	
-	} while (fim = false);
 		system("pause");
+	} while (fim = false);
 	return 0;
 }
-
