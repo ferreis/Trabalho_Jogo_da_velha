@@ -52,8 +52,6 @@ int main()
 				InterfacedoJogo(jogodavelha);
 
 				if (vencedornumb == 1) { vencedor = true; }
-
-			
 			} while (vencedor == false);
 			break;
 		case 2:
@@ -66,6 +64,6 @@ int main()
 			cout << "Numero digitado invalido";
 			break;
 		}
-	} while (fim == false);
+	}while (fim == false);
 	return 0;
 }
