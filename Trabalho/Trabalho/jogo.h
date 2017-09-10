@@ -240,7 +240,6 @@ int verificado(int verificadorjogodavelha[TAMANHO][TAMANHO], int turno)
 		return 1;
 	}
 	return 0;
-	return 0;
 }
 
 #endif 
