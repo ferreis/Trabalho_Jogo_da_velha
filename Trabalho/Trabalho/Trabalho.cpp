@@ -17,9 +17,11 @@ int main()
 	bool vencedor = false, jogadavalida;
 	bool fim = false;
 	do{
+	system("cls");
 	cout << "1-Player vs Player" << endl;
 	cout << "2-Player vs CPU" << endl;
-	cout << "3-Sair" << endl;
+	cout << "3-Limpar" << endl;
+	cout << "4-Sair" << endl;
 	cin >> selecao;
 		switch (selecao)
 		{
@@ -34,7 +36,7 @@ int main()
 					do {
 						cin >> jogadorX;
 						jogoX(verificadorjogodavelha, jogodavelha, jogadorX, jogadavalida);
-					} while (jogadavalida == true);
+					} while (jogadavalida == false);
 					turno++;
 				}
 
@@ -49,7 +51,7 @@ int main()
 					do {
 						cin >> jogadorO;
 						jogoO(verificadorjogodavelha, jogodavelha, jogadorO, jogadavalida);
-					} while (jogadavalida == true);
+					} while (jogadavalida == false);
 					turno++;
 				}
 
@@ -61,6 +63,7 @@ int main()
 
 			
 			} while (vencedor == false);
+			system("pause");
 			break;
 		case 2:
 			do {
@@ -73,7 +76,7 @@ int main()
 					do {
 					cin >> jogadorX;
 					jogoX(verificadorjogodavelha, jogodavelha, jogadorX, jogadavalida);
-					} while (jogadavalida == true);
+					} while (jogadavalida == false);
 					turno++;
 				}
 
@@ -89,7 +92,7 @@ int main()
 						jogada = numeroAleatorio(0, 9);
 						jogadorO = AlterarNumAleatorio(jogada);
 						jogoO(verificadorjogodavelha, jogodavelha, jogadorO, jogadavalida);
-					} while (jogadavalida == true);
+					} while (jogadavalida == false);
 					turno++;
 				}
 
@@ -102,6 +105,14 @@ int main()
 			} while (vencedor == false);
 			break;
 		case 3:
+			for (int linha = 0; linha < TAMANHO;linha++) {
+				for (int coluna = 0; coluna < TAMANHO; coluna++) {
+					jogodavelha[linha][coluna] = NULL;
+					verificadorjogodavelha[linha][coluna] = NULL;
+				}
+			}
+			break;
+		case 4:
 			fim = true;
 			break;
 		default:

@@ -26,7 +26,7 @@ void InterfacedoJogo(char jogodavelha[TAMANHO][TAMANHO])
 		std::cout << "|" << std::endl;
 	}
 }
-void jogoX(int verificadorjogodavelha[TAMANHO][TAMANHO], char jogodavelha[TAMANHO][TAMANHO], int jogadorX, bool jogadavalida) {
+void jogoX(int verificadorjogodavelha[TAMANHO][TAMANHO], char jogodavelha[TAMANHO][TAMANHO], int jogadorX, bool &jogadavalida) {
 		switch (jogadorX)
 		{
 		case 11:
@@ -97,7 +97,7 @@ void jogoX(int verificadorjogodavelha[TAMANHO][TAMANHO], char jogodavelha[TAMANH
 			break;
 	}
 }
-void jogoO(int verificadorjogodavelha[TAMANHO][TAMANHO], char jogodavelha[TAMANHO][TAMANHO], int jogadorO, bool jogadavalida) {
+void jogoO(int verificadorjogodavelha[TAMANHO][TAMANHO], char jogodavelha[TAMANHO][TAMANHO], int jogadorO, bool &jogadavalida) {
 		switch (jogadorO)
 		{
 		case 11:
