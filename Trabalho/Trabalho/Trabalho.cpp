@@ -12,7 +12,7 @@ int main()
 {
 	char jogodavelha[TAMANHO][TAMANHO] = { 0 };
 	int verificadorjogodavelha[TAMANHO][TAMANHO] = {0};
-	int selecao, jogadorX, jogadorO, vencedornumb;
+	int selecao, jogadorX, jogadorO, vencedornumb, jogada;
 	int  turno = 0;
 	bool vencedor = false;
 	bool fim = false;
@@ -75,8 +75,8 @@ int main()
 				if (vencedornumb == 1) { vencedor = true; }
 
 				if (vencedor == false) {
-					int jogada == numeroAleatorio(0, 9);
-					jogadorO == AlterarNumAleatorio(jogada);						
+					jogada = numeroAleatorio(0, 9);
+					jogadorO = AlterarNumAleatorio(jogada);						
 					jogoO(verificadorjogodavelha, jogodavelha, jogadorO);
 					turno++;
 				}
