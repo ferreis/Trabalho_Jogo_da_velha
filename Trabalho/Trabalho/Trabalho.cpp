@@ -12,7 +12,7 @@ int main()
 {
 	char jogodavelha[TAMANHO][TAMANHO] = { 0 };
 	int verificadorjogodavelha[TAMANHO][TAMANHO] = {0};
-	int selecao, jogadorX, jogadorO, vencedornumb, jogada;
+	int selecao, jogadorX, jogadorO, vencedornumb;
 	int  turno = 0;
 	bool vencedor = false, jogadavalida;
 	bool fim = false;
@@ -26,6 +26,7 @@ int main()
 		switch (selecao)
 		{
 		case 1:
+			vencedor = false;
 			do {
 				system("cls");
 				InterfacedoJogo(jogodavelha);
