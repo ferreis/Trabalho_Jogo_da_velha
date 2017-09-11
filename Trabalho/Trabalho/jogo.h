@@ -3,10 +3,9 @@
 #define jogo_h
 #define TAMANHO 4
 
-int numeroAleatorio(int menor, int maior) {
-	return rand() % (maior - menor + 1) + menor;
+int numeroAleatorio() {
+	return rand() % 9 + 1;
 }
-
 int AlterarNumAleatorio(int NumAleatorio) {
 	return (NumAleatorio/3+1)*10+(NumAleatorio%3+1);
 }
@@ -166,6 +165,77 @@ void jogoO(int verificadorjogodavelha[TAMANHO][TAMANHO], char jogodavelha[TAMANH
 		default:
 			std::cout << "cordernadas digitado invalido";
 			break;
+	}
+}
+void BotO(int verificadorjogodavelha[TAMANHO][TAMANHO], char jogodavelha[TAMANHO][TAMANHO], int jogadorO, bool &jogadavalida) {
+	switch (jogadorO)
+	{
+	case 1:
+		if (verificadorjogodavelha[1][1] != 1) {
+			jogodavelha[1][1] = 'O';
+			verificadorjogodavelha[1][1] = 2;
+			jogadavalida = true;
+		}
+		break;
+	case 2:
+		if (verificadorjogodavelha[1][2] != 1) {
+			jogodavelha[1][2] = 'O';
+			verificadorjogodavelha[1][2] = 2;
+			jogadavalida = true;
+		}
+		break;
+	case 3:
+		if (verificadorjogodavelha[1][3] != 1) {
+			jogodavelha[1][3] = 'O';
+			verificadorjogodavelha[1][3] = 2;
+			jogadavalida = true;
+		}
+		break;
+	case 4:
+		if (verificadorjogodavelha[2][1] != 1) {
+			jogodavelha[2][1] = 'O';
+			verificadorjogodavelha[2][1] = 2;
+			jogadavalida = true;
+		}
+		break;
+	case 5:
+		if (verificadorjogodavelha[2][2] != 1) {
+			jogodavelha[2][2] = 'O';
+			verificadorjogodavelha[2][2] = 2;
+			jogadavalida = true;
+		}
+		break;
+	case 6:
+		if (verificadorjogodavelha[2][3] != 1) {
+			jogodavelha[2][3] = 'O';
+			verificadorjogodavelha[2][3] = 2;
+			jogadavalida = true;
+		}
+		break;
+	case 7:
+		if (verificadorjogodavelha[3][1] != 1) {
+			jogodavelha[3][1] = 'O';
+			verificadorjogodavelha[3][1] = 2;
+			jogadavalida = true;
+		}
+		break;
+	case 8:
+		if (verificadorjogodavelha[3][2] != 1) {
+			jogodavelha[3][2] = 'O';
+			verificadorjogodavelha[3][2] = 2;
+			jogadavalida = true;
+		}
+		break;
+	case 9:
+		if (verificadorjogodavelha[3][3] != 1) {
+			jogodavelha[3][3] = 'O';
+			verificadorjogodavelha[3][3] = 2;
+			jogadavalida = true;
+		}
+		break;
+	default:
+		std::cout << "cordernadas digitado invalido";
+		break;
 	}
 }
 int verificado(int verificadorjogodavelha[TAMANHO][TAMANHO], int turno)

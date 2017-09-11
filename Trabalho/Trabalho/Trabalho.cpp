@@ -89,9 +89,8 @@ int main()
 				if (vencedor == false) {
 					jogadavalida = false;
 					do {
-						jogada = numeroAleatorio(0, 9);
-						jogadorO = AlterarNumAleatorio(jogada);
-						jogoO(verificadorjogodavelha, jogodavelha, jogadorO, jogadavalida);
+						jogadorO = numeroAleatorio();
+						BotO(verificadorjogodavelha, jogodavelha, jogadorO, jogadavalida);
 					} while (jogadavalida == false);
 					turno++;
 				}
