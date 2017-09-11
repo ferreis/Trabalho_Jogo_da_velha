@@ -17,9 +17,6 @@ int main()
 	bool vencedor = false;
 	bool fim = false;
 	do{
-		int num == numeroAleatorio(0, 9)
-		cout << num << endl;
-		cout << AlterarNumAleatorio(num) << endl;
 	cout << "1-Player vs Player" << endl;
 	cout << "2-Player vs CPU" << endl;
 	cout << "3-Sair" << endl;
