@@ -8,7 +8,7 @@ int numeroAleatorio(int menor, int maior) {
 }
 
 int AlterarNumAleatorio(int NumAleatorio) {
-	(NumAleatorio/3 + 1)*10 + (NumAleatorio%3 + 1)
+	(NumAleatorio / 3 + 1) * 10 + (NumAleatorio % 3 + 1);
 }
 void InterfacedoJogo(char jogodavelha[TAMANHO][TAMANHO]) 
 {	
