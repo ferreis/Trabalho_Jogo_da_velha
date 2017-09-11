@@ -8,7 +8,7 @@ int numeroAleatorio(int menor, int maior) {
 }
 
 int AlterarNumAleatorio(int NumAleatorio) {
-	(NumAleatorio/3+1)*10+(NumAleatorio%3+1);
+	return (NumAleatorio/3+1)*10+(NumAleatorio%3+1);
 }
 void InterfacedoJogo(char jogodavelha[TAMANHO][TAMANHO]) 
 {	
@@ -26,61 +26,70 @@ void InterfacedoJogo(char jogodavelha[TAMANHO][TAMANHO])
 		std::cout << "|" << std::endl;
 	}
 }
-void jogoX(int verificadorjogodavelha[TAMANHO][TAMANHO], char jogodavelha[TAMANHO][TAMANHO], int jogadorX) {
-	switch (jogadorX)
+void jogoX(int verificadorjogodavelha[TAMANHO][TAMANHO], char jogodavelha[TAMANHO][TAMANHO], int jogadorX, bool jogadavalida) {
+		switch (jogadorX)
 		{
 		case 11:
 			if (verificadorjogodavelha[1][1] != 2) {
 				jogodavelha[1][1] = 'X';
 				verificadorjogodavelha[1][1] = 1;
+				jogadavalida = true;
 			}
 			break;
 		case 12:
 			if (verificadorjogodavelha[1][2] != 2) {
 				jogodavelha[1][2] = 'X';
 				verificadorjogodavelha[1][2] = 1;
+				jogadavalida = true;
 			}
 			break;
 		case 13:
 			if (verificadorjogodavelha[1][3] != 2) {
 				jogodavelha[1][3] = 'X';
 				verificadorjogodavelha[1][3] = 1;
+				jogadavalida = true;
 			}
 			break;
 		case 21:
 			if (verificadorjogodavelha[2][1] != 2) {
 				jogodavelha[2][1] = 'X';
 				verificadorjogodavelha[2][1] = 1;
+				jogadavalida = true;
 			}
 			break;
 		case 22:
 			if (verificadorjogodavelha[2][2] != 2) {
 				jogodavelha[2][2] = 'X';
 				verificadorjogodavelha[2][2] = 1;
+				jogadavalida = true;
 			}
 			break;
 		case 23:
 			if (verificadorjogodavelha[2][3] != 2) {
 				jogodavelha[2][3] = 'X';
 				verificadorjogodavelha[2][3] = 1;
+				jogadavalida = true;
 			}
 			break;
 		case 31:
 			if (verificadorjogodavelha[3][1] != 2) {
 				jogodavelha[3][1] = 'X';
 				verificadorjogodavelha[3][1] = 1;
+				jogadavalida = true;
 			}
 			break;
 		case 32:
 			if (verificadorjogodavelha[3][2] != 2) {
 				jogodavelha[3][2] = 'X';
 				verificadorjogodavelha[3][2] = 1;
+				jogadavalida = true;
 			}
 			break;
 		case 33:
 			if (verificadorjogodavelha[3][3] != 2) {
 				jogodavelha[3][3] = 'X';
 				verificadorjogodavelha[3][3] = 1;
+				jogadavalida = true;
 			}
 			break;
 		default:
@@ -88,68 +97,75 @@ void jogoX(int verificadorjogodavelha[TAMANHO][TAMANHO], char jogodavelha[TAMANH
 			break;
 	}
 }
-void jogoO(int verificadorjogodavelha[TAMANHO][TAMANHO], char jogodavelha[TAMANHO][TAMANHO], int jogadorO) {
-
+void jogoO(int verificadorjogodavelha[TAMANHO][TAMANHO], char jogodavelha[TAMANHO][TAMANHO], int jogadorO, bool jogadavalida) {
 		switch (jogadorO)
 		{
 		case 11:
 			if (verificadorjogodavelha[1][1] != 1) {
 				jogodavelha[1][1] = 'O';
 				verificadorjogodavelha[1][1] = 2;
+				jogadavalida = true;
 			}
 			break;
 		case 12:
 			if (verificadorjogodavelha[1][2] != 1) {
 				jogodavelha[1][2] = 'O';
 				verificadorjogodavelha[1][2] = 2;
+				jogadavalida = true;
 			}
 			break;
 		case 13:
 			if (verificadorjogodavelha[1][3] != 1) {
 				jogodavelha[1][3] = 'O';
 				verificadorjogodavelha[1][3] = 2;
+				jogadavalida = true;
 			}
 			break;
 		case 21:
 			if (verificadorjogodavelha[2][1] != 1) {
 				jogodavelha[2][1] = 'O';
 				verificadorjogodavelha[2][1] = 2;
+				jogadavalida = true;
 			}
 			break;
 		case 22:
 			if (verificadorjogodavelha[2][2] != 1) {
 				jogodavelha[2][2] = 'O';
 				verificadorjogodavelha[2][2] = 2;
+				jogadavalida = true;
 			}
 			break;
 		case 23:
 			if (verificadorjogodavelha[2][3] != 1) {
 				jogodavelha[2][3] = 'O';
 				verificadorjogodavelha[2][3] = 2;
+				jogadavalida = true;
 			}
 			break;
 		case 31:
 			if (verificadorjogodavelha[3][1] != 1) {
 				jogodavelha[3][1] = 'O';
 				verificadorjogodavelha[3][1] = 2;
+				jogadavalida = true;
 			}
 			break;
 		case 32:
 			if (verificadorjogodavelha[3][2] != 1) {
 				jogodavelha[3][2] = 'O';
 				verificadorjogodavelha[3][2] = 2;
+				jogadavalida = true;
 			}
 			break;
 		case 33:
 			if (verificadorjogodavelha[3][3] != 1) {
 				jogodavelha[3][3] = 'O';
 				verificadorjogodavelha[3][3] = 2;
+				jogadavalida = true;
 			}
 			break;
 		default:
 			std::cout << "cordernadas digitado invalido";
 			break;
-		
 	}
 }
 int verificado(int verificadorjogodavelha[TAMANHO][TAMANHO], int turno)

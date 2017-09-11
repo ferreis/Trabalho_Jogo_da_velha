@@ -14,7 +14,7 @@ int main()
 	int verificadorjogodavelha[TAMANHO][TAMANHO] = {0};
 	int selecao, jogadorX, jogadorO, vencedornumb, jogada;
 	int  turno = 0;
-	bool vencedor = false;
+	bool vencedor = false, jogadavalida;
 	bool fim = false;
 	do{
 	cout << "1-Player vs Player" << endl;
@@ -29,9 +29,12 @@ int main()
 				InterfacedoJogo(jogodavelha);
 
 				if (vencedor == false) {
+					jogadavalida = false;
 					cout << "vez do Jogador X" << endl;
-					cin >> jogadorX;
-					jogoX(verificadorjogodavelha, jogodavelha, jogadorX);
+					do {
+						cin >> jogadorX;
+						jogoX(verificadorjogodavelha, jogodavelha, jogadorX, jogadavalida);
+					} while (jogadavalida == true);
 					turno++;
 				}
 
@@ -41,9 +44,12 @@ int main()
 				
 				if (vencedornumb == 1) { vencedor = true; }
 				if (vencedor == false) {
+					jogadavalida = false;
 					cout << "vez do Jogador O" << endl;
-					cin >> jogadorO;
-					jogoO(verificadorjogodavelha, jogodavelha, jogadorO);
+					do {
+						cin >> jogadorO;
+						jogoO(verificadorjogodavelha, jogodavelha, jogadorO, jogadavalida);
+					} while (jogadavalida == true);
 					turno++;
 				}
 
@@ -62,9 +68,12 @@ int main()
 				InterfacedoJogo(jogodavelha);
 
 				if (vencedor == false) {
+					jogadavalida = false;
 					cout << "vez do Jogador X" << endl;
+					do {
 					cin >> jogadorX;
-					jogoX(verificadorjogodavelha, jogodavelha, jogadorX);
+					jogoX(verificadorjogodavelha, jogodavelha, jogadorX, jogadavalida);
+					} while (jogadavalida == true);
 					turno++;
 				}
 
@@ -75,9 +84,12 @@ int main()
 				if (vencedornumb == 1) { vencedor = true; }
 
 				if (vencedor == false) {
-					jogada = numeroAleatorio(0, 9);
-					jogadorO = AlterarNumAleatorio(jogada);						
-					jogoO(verificadorjogodavelha, jogodavelha, jogadorO);
+					jogadavalida = false;
+					do {
+						jogada = numeroAleatorio(0, 9);
+						jogadorO = AlterarNumAleatorio(jogada);
+						jogoO(verificadorjogodavelha, jogodavelha, jogadorO, jogadavalida);
+					} while (jogadavalida == true);
 					turno++;
 				}
 
